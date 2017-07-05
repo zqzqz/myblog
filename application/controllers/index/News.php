@@ -26,7 +26,8 @@ class News extends CI_Controller {
 		$this->load->view('news/view', $data);
 		$this->load->view('templates/footer');	
 	}
-	
+
+	/*	
 	public function create() {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -46,11 +47,12 @@ class News extends CI_Controller {
 			$this->load->view('news/success');
 		}
 	}
-
+*/
 	public function success() {
 		$data['title'] = 'create news';
 		$this->load->view('templates/header', $data);		
 		$this->load->view('news/success', $data);
 		$this->load->view('templates/footer');	
 	}
+	
 }

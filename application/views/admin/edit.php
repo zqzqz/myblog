@@ -5,7 +5,7 @@
 <form action="" method="POST" enctype="multipart/form-data">
 <table class="table">
   <tr class="th">
-    <td colspan="10">发表文章</td>
+    <td colspan="10">编辑文章</td>
   </tr>
   <tr>
     <td>标题</td>

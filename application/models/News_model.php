@@ -3,6 +3,7 @@ class News_model extends CI_Model {
 	public function __construct() {
 		$this->load->database();
 	}
+
 	public function get_news($slug = False) {
 		if ($slug === FALSE) {
 			$query = $this->db->get('news');
@@ -18,6 +19,7 @@ class News_model extends CI_Model {
 		$data = array(
 			'title' => $this->input->post('title'),
 			'slug' => $slug,
+			'summary' => $this->input->post('summary'),
 			'text' => $this->input->post('text')
 		);
 
