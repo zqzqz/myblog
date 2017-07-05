@@ -1,54 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+  <div id='header'>
+    <div id='logo'>
+      <a href="<?php echo site_url(''); ?>">BLOGs</a>
+    </div>
+    <div class="navigation">
+      <a href="<?php echo site_url('news/'); ?>">Articles</a>
+      <a href="<?php echo site_url('about/'); ?>">About Me</a>
+    </div>
+  </div>
+-->
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>BLOG</title>
-    
-    <style>
-    header{
-        height:50px;
-        background: #CDCDCD;
-    }
-    body,header,nav,ul,li{
-        margin:0;
-        padding: 0;
-        
-    }
-    nav{
-        margin:0 auto;
-        width: 70%;
-        height:50px;
-    }
-    nav ul{
-        list-style-type:none;
-        overflow:hidden;
-    }
-    nav ul li{
-        float: left;
-        margin:1% 0;
-        margin-left: 3%;
-    }
-    nav ul li a:link,nav ul li a:visited
-    {
-        display:block;
-        /*width:80px;*/
-        font-weight:bold;
-        font-variant:small-caps;
-        font-size: 24px;
-        font-style: italic;
-        color:rgba(158,158,158,1);
-        text-align:center;
-        padding:4px;
-        text-decoration:none;
-        text-transform:uppercase;
-    }
-    nav ul li a:hover,nav ul li a:active
-    {
-        color:#B11C3F;
-    }
-    </style>
-  
+    <meta charset="utf-8">
+    <title>BLOGs</title>
+        <link rel="stylesheet" href="<?php echo base_url() . 'public/bootstrap/css/custom.css' ?>">
+	<link rel="stylesheet" href="<?php echo base_url() . 'public/bootstrap/css/bootstrap.min.css' ?>">
+	<script src="<?php echo base_url() . 'public/bootstrap/js/jquery.js' ?>"></script>
+	<script src="<?php echo base_url() . 'public/bootstrap/js/bootstrap.min.js' ?>"></script>
+
 </head>
 <body>
-<header>
-</header>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+    <div class="container-fluid"> 
+    <div class="navbar-header navbar-left"> 
+        <a class="navbar-brand" href="<?php echo site_url(''); ?>">BLOG</a> 
+    </div> 
+    <div> 
+        <ul class="nav navbar-nav navbar-right"> 
+            <li ><a href="<?php echo site_url('news/'); ?>">View Articles</a></li> 
+            <li ><a href="<?php echo site_url('about/'); ?>">About Me</a></li> 
+                
+        </ul> 
+    </div> 
+    </div> 
+</nav>
+<!-- unsolved problem: text covered -->
+<br>
+<br>
+<br>
