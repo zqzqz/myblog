@@ -50,15 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+$route['default_controller'] = 'Pages';
 $route['admin/index']='admin/Admin/index';
 $route['admin/publish']='admin/AdminNews/publish';
 $route['admin/edit']='admin/AdminNews/edit';
-$route['default_controller'] = 'index/pages/view';
-$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['news'] = 'index/news';
-$route['news/(:any)'] = 'index/news/view/$1';
-$route['(:any)'] = 'index/pages/view/$1';
+$route['news'] = 'index/News';
+$route['about'] = 'Pages/about';
+$route['news/view/(:any)'] = 'index/News/view/$1';
+$route['tag/(:any)'] = 'index/Tag/view/$1';
+$route['(:any)'] = 'Pages/view/$1';
+$route['404_override'] = '';
 
 /*
 $route['Blog/(:get_one_article)'] = 'Blog/get_one_article/$1'; 

@@ -8,12 +8,12 @@ class Admin extends CI_Controller{
 		if(!file_exists(APPPATH.'views/admin/index.php')){
 			show_404();
 		}
-		$this->load->view('admin/index.php');
+		$this->load->view('admin/index');
 	}
 
 
 	public function welcome(){
-		$this->load->view('admin/welcome.php');
+		$this->load->view('admin/welcome');
 	}
 
 }

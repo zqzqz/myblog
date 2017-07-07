@@ -4,13 +4,10 @@ class Tag_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function get_tag($tag = False) {
-		if ($tag === FALSE) {
-			$query = $this->db->get('tags');
-			return $query->result_array();
-		}
-		$query = $this->db->get_where('tags', array('tag' => $tag));
-		return $query->row_array();
+	public function get_tag($tag) {
+
+		$sqlquery = $this->db->select('*')->from('news')->join('tags', 'news.slug=tags.slug')->where('tag', $tag)->get()->result_array();
+		return $query = $sqlquery;
 	}
 
 	public function set_tag() {

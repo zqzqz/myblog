@@ -36,6 +36,6 @@
   </tr>
     
 </table>
-
-  <input type="submit" name="submit" value="Create news item" />
+  
+  <input type="submit" name="submit" value="完成" />
 </form>

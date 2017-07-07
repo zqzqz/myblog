@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() . 'public/bootstrap/css/bootstrap.min.css' ?>">
 	<script src="<?php echo base_url() . 'public/bootstrap/js/jquery.js' ?>"></script>
 	<script src="<?php echo base_url() . 'public/bootstrap/js/bootstrap.min.js' ?>"></script>
+	<link rel="stylesheet" href="<?php echo base_url() . 'public/admin/' ?>css/public.css" />
 
 </head>
 <body>

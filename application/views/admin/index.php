@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<title>后台管理首页</title>
-	<link rel="stylesheet" href="<?php echo base_url() . 'style/admin/' ?>css/admin.css" />
-	<script type="text/javascript" src="<?php echo base_url() . 'style/admin/' ?>js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url() . 'style/admin/' ?>js/admin.js"></script>
+
+	<link rel="stylesheet" href="<?php echo base_url() . 'public/admin/' ?>css/admin.css" />
+	<script type="text/javascript" src="<?php echo base_url() . 'public/admin/' ?>js/jquery-1.7.2.min.js" ></script>
+	<script type="text/javascript" src="<?php echo base_url() . 'public/admin/' ?>js/admin.js" ></script>
 <!-- 默认打开目标 -->
 <base target="iframe"/>
 </head>
@@ -13,7 +13,7 @@
 <!-- 头部 -->
 	<div id="top_box">
 		<div id="top">
-			<p id="top_font">后台管理首页 （V1.1）</p>
+			<p id="top_font">后台管理首页</p>
 		</div>
 		<div class="top_bar">
 			<p class="adm">
@@ -45,7 +45,12 @@
 				    </ul>
 					<ul class="con">
 				        <li class="nav_u">
-				        	<a href="<?php echo site_url('/admin/AdminNews/publish') ?>" class="pos">查看文章</a>				        	
+				        	<a href="<?php echo site_url('/admin/AdminNews/index') ?>" class="pos">查看文章</a>				        	
+				        </li> 
+				    </ul>
+					<ul class="con">
+				        <li class="nav_u">
+				        	<a href="<?php echo site_url('/admin/Upload/do_upload') ?>" class="pos">上传图片</a>				        	
 				        </li> 
 				    </ul>
 
