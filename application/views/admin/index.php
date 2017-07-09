@@ -19,10 +19,9 @@
 			<p class="adm">
 				<span>管理员：</span>
 				<span class="adm_pic">&nbsp&nbsp&nbsp&nbsp</span>
-				<span class="adm_people">[<?php echo "username" ?>]</span>
+				<span class="adm_people">[<?php echo $this->session->userdata('username') ?>]</span>
 			</p>
 			<p class="now_time">
-				今天是：2014.7.1
 				您的当前位置是：
 				<span>首页</span>
 			</p>

@@ -2,6 +2,7 @@
 
 // back stage login controller
 class Login extends CI_Controller{
+	
 
 	//default view function
 	public function index(){
@@ -9,8 +10,8 @@ class Login extends CI_Controller{
 			show_404();
 		}
 		
-
-		$this->load->view('admin/login.php');
+		$data['error'] = '';
+		$this->load->view('admin/login.php', $data);
 	}
 	
 	//login function
@@ -20,22 +21,25 @@ class Login extends CI_Controller{
 		}
 
 		$username = $this->input->post('username');
-		$this->load->model('admin_model', 'admin');
-		$userData = $this->admin->check($username);
+		$this->load->model('user_model', 'user');
+		$userData = $this->user->check($username);
 
 		$passwd = $this->input->post('passwd');
 
-		if(!$userData || $userData[0]['passwd'] != md5($passwd)) error('用户名或者密码不正确');
+		if(!$userData || $userData[0]['password'] != md5($passwd)){
+			$data['error'] = '用户名或密码不正确';
+			redirect('/admin/', $data);
+		} 
 
 		$sessionData = array(
 			'username'	=> $username,
-			'uid'		=> $userData[0]['uid'],
+			'uid'		=> $userData[0]['id'],
 			'logintime' => time()
 			);
 
 		$this->session->set_userdata($sessionData);
 		
-		success('admin/Admin/index', '登陆成功');
+		redirect('/admin/index/');
 
 	}
 
@@ -43,6 +47,6 @@ class Login extends CI_Controller{
 	//logout function
 	public function login_out(){
 		$this->session->sess_destroy();
-		success('admin/Login/index','退出成功');
+		redirect('/admin/');
 	}
 }

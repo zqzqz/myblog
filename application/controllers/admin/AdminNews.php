@@ -1,7 +1,7 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
 //back stage controller
-class AdminNews extends CI_Controller{
+class AdminNews extends MY_Controller{
 	
 	public function __construct() {
 		parent::__construct();

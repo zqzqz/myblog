@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div id="divBox">
+		<script>if($error != '') alert("<?php echo $error ?>");</script>
 		<form action="<?php echo site_url('admin/login/login_in') ?>" method="POST" id="login">
 			<input type="text" id="userName" name="username"/>
 			<input type="password" id="psd" name="passwd"/>   

@@ -13,7 +13,7 @@ class User_model extends CI_Model{
 
 	//change the password
 	public function change($uid, $data){
-		$this->db->update('user', $data, array('uid'=>$uid));
+		$this->db->update('user', $data, array('id'=>$uid));
 	}
 
 	
