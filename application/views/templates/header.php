@@ -19,6 +19,7 @@
 	<script src="<?php echo base_url() . 'public/bootstrap/js/jquery.js' ?>"></script>
 	<script src="<?php echo base_url() . 'public/bootstrap/js/bootstrap.min.js' ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url() . 'public/admin/' ?>css/public.css" />
+	<link href="<?php echo base_url() . 'public/index/' ?>css/details.css" rel="stylesheet" />
 
 </head>
 <body>

@@ -43,7 +43,8 @@ foreach($news as $news_item): ?>
 			<p><?php echo $news_info['text']; ?></p>
 		</td>
 		<td>
-			<a href="">[删除]</a><a href="">[修改]</a>
+			<a href="<?php echo site_url('/admin/AdminNews/delete/').$news_info['title'] ?>">[删除]</a>
+			<a href="<?php echo site_url('/admin/AdminNews/edit/').$news_info['title'] ?>">[修改]</a>
 		</td>
 	</tr>
 

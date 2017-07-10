@@ -4,6 +4,7 @@ class News_model extends CI_Model {
 		$this->load->database();
 	}
 
+	//get news information
 	public function get_news($slug = False) {
                 //select news with tags
 		if ($slug === FALSE) {
@@ -23,6 +24,7 @@ class News_model extends CI_Model {
 		return $sqlquery;
 	}
 
+	//add news object
 	public function set_news() {
 		//$this->load->helper('url');
                 //get current time
@@ -41,4 +43,24 @@ class News_model extends CI_Model {
 
 		return $this->db->insert('news', $data);
 	}
+
+	//delete news object
+	public function del_news($slug) {
+		$this->db->where('slug', $slug);
+		$this->db->delete('news');
+	}
+
+	//edit news object
+	public function edit_news($slug) {
+		
+		$new_slug = url_title($this->input->post('title'), 'dash', TRUE);
+		$data = array(
+			'title' => $this->input->post('title'),
+			'slug' => $new_slug,
+			'summary' => $this->input->post('summary'),
+			'text' => $this->input->post('text')
+		);
+		$id = $this->db->select('id')->where('slug', $slug)->get()->result_array();
+		$this->db->update('news', $data, array('is'=>$id['id']));
+	}		
 }

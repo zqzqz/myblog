@@ -7,25 +7,29 @@ foreach($news as $news_item): ?>
 	$news_info = $news_item[0];
 	$tag_info = $news_item[1]; ?>
 
-	<div>
-		<div class='title'>
+	<div id='main'>
+		<div class='details'>
 			<h2><?php echo $news_info['title']; ?></h2>
-		</div>
-		<div>
+			<a href="<?php echo site_url('news/view/').$news_info['title'] ?>">显示全文</a>
+		<div class='base'>
+			<em>发表于 <?php echo $news_info['time'] ?></em>
+			<strong>
 			<?php
 			foreach($tag_info as $tag){
 				echo "<a href=".site_url('tag/').$tag['tag']." >".$tag['tag']."</a>  ";
-			}  ?>
+			}  ?></strong>
 		</div>
-		<div class='summary'>
-			<p><?php echo $news_info['summary']; ?></p>
+		<div class='conyent'>
+			<?php echo $news_info['summary']; ?>
 		</div>
-		<div class='text'>
-			<p><?php echo $news_info['text']; ?></p>
+		<div class='content'>
+			<?php echo $news_info['text']; ?>
 		</div>
-		<a href="<?php echo site_url('news/view/').$news_info['title'] ?>">显示全文</a>
+		</div>
+		
+		
 	</div>
-	<br />
+	<br /><br /><br />
 
 <?php endforeach ?>
 <div class="page">

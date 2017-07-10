@@ -52,22 +52,34 @@ class AdminNews extends MY_Controller{
 		}
 	}
 			
+	
+	public function delete($slug){
+		$this->news_model->del_news($slug);
+		$this->tag_model->del_tag($slug);
+		redirect('/admin/AdminNews/index');
+	}
+		
 
-	public function edit(){
+	//edit news(article)
+	//bug!!!!! copy the news?
+	public function edit($slug){
+
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		if(!file_exists(APPPATH.'views/admin/edit.php')){
 			show_404();
 		}
 		$data['title']="修改文章";
+		$data['news_item']=$this->news_model->get_news($slug);
 
 		if ($this->form_validation->run('news') === FALSE) {
 			$this->load->view('admin/edit', $data);
 	
 		}
 		else {
-			$this->news_model->set_news();
-			$this->load->view('admin/edit');
+			$this->news_model->edit_news($slug);
+			$this->tag_model->edit_tag($slug);
+			redirect('/admin/AdminNews/index');
 		}
 	}
 }
