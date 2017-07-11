@@ -54,8 +54,8 @@ class AdminNews extends MY_Controller{
 			
 	
 	public function delete($slug){
-		$this->news_model->del_news($slug);
 		$this->tag_model->del_tag($slug);
+		$this->news_model->del_news($slug);
 		redirect('/admin/AdminNews/index');
 	}
 		
