@@ -16,4 +16,4 @@ A template of personal blog website.
 
 ## other announcement
 The css/js part is unfinished. The repo is just for studying.
-[my temporary blog website](http://123.206.104.193/ci)
+[my temporary blog website](http://123.206.204.193/ci)
