@@ -48,7 +48,7 @@ class AdminNews extends MY_Controller{
 		else {
 			$this->news_model->set_news();
 			$this->tag_model->set_tag();
-			$this->load->view('admin/index');
+			$this->load->view('admin/welcome');
 		}
 	}
 			
@@ -61,7 +61,6 @@ class AdminNews extends MY_Controller{
 		
 
 	//edit news(article)
-	//bug!!!!! copy the news?
 	public function edit($slug){
 
 		$this->load->helper('form');

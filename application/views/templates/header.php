@@ -20,6 +20,7 @@
 	<script src="<?php echo base_url() . 'public/bootstrap/js/bootstrap.min.js' ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url() . 'public/admin/' ?>css/public.css" />
 	<link href="<?php echo base_url() . 'public/index/' ?>css/details.css" rel="stylesheet" />
+    	<link rel="stylesheet" type="text/css" hhref="<?php echo base_url() . 'public/index/' ?>css/site.css" />
 
 </head>
 <body>
@@ -41,4 +42,4 @@
 <!-- unsolved problem: text covered -->
 <br>
 <br>
-<br>
+<div class="container body-content">

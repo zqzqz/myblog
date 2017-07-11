@@ -31,6 +31,18 @@ $config = array(
 				'rules' => 'required'
 				)
 		),
+	'comment' =>	array(
+			array(
+				'field' => 'name',
+				'label' => 'Name',
+				'rules' => 'required|max_length[32]'
+				),
+			array(
+				'field' => 'comment',
+				'label' => 'Comment',
+				'rules' => 'required|min_length[10]'
+				)
+		),
 );
 
 

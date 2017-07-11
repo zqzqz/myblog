@@ -1,4 +1,18 @@
 <?php
+
+/*
+	create table news(
+	id int(11) not null auto_increment,
+	slug varchar(128) not null,
+	title varchar(128) not null,
+	summary text not null,
+	text text not null,
+	time date noy null,
+	primary key id (id),
+	key slug (slug)
+	);
+*/
+
 class News_model extends CI_Model {
 	public function __construct() {
 		$this->load->database();
@@ -60,7 +74,7 @@ class News_model extends CI_Model {
 			'summary' => $this->input->post('summary'),
 			'text' => $this->input->post('text')
 		);
-		$id = $this->db->select('id')->where('slug', $slug)->get()->result_array();
-		$this->db->update('news', $data, array('is'=>$id['id']));
+		
+		$this->db->update('news', $data, array('slug'=>$slug));
 	}		
 }

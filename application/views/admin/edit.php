@@ -1,9 +1,9 @@
 <h2><?php echo $title; ?></h2>
-
-<?php echo form_open('admin/AdminNews/publish'); ?>
 <?php	
 	$news_info = $news_item[0];
 	$tag_info = $news_item[1]; ?>
+<?php echo form_open('admin/AdminNews/edit/'.$news_info['title']); ?>
+
 <form action="" method="POST" enctype="multipart/form-data">
 <table class="table">
   <tr class="th">

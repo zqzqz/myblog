@@ -3,6 +3,7 @@ class News extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('news_model');
+		$this->load->model('comment_model');
 	}
 		
 	public function index() {
@@ -29,17 +30,32 @@ class News extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
-	public function view($slug = NULL) {
+	public function view($slug) {
+		$this->load->helper('form');
+		$this->load->library('form_validation');
 		$data['news'] = $this->news_model->get_news($slug);
 		
 		if (empty($data['news'])) {
 			show_404();
 		}
 		//$data['title'] = $data['news'][0]['title'];
+		
 
-		$this->load->view('templates/header', $data);		
-		$this->load->view('news/view', $data);
-		$this->load->view('templates/footer');	
+		
+		if ($this->form_validation->run('comment') === FALSE) {
+			$data['comments'] = $this->comment_model->get_comment($slug);
+			$this->load->view('templates/header', $data);			
+			$this->load->view('news/view', $data);	
+			$this->load->view('templates/footer');
+		}
+		else{
+			$this->comment_model->set_comment($slug);
+			$data['comments'] = $this->comment_model->get_comment($slug);	
+			$this->load->view('templates/header', $data);	
+			$this->load->view('news/view', $data);
+			$this->load->view('templates/footer');
+		}
+			
 	}
 
 	
