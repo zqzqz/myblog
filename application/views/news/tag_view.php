@@ -24,3 +24,7 @@
 	<br /><br /><br />
 
 <?php endforeach; ?>
+
+<div class="page">
+	<?php echo $links ?>
+</div>

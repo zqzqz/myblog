@@ -4,10 +4,13 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->model('news_model');
 		$this->load->model('comment_model');
+		$this->load->model('tag_model');
 	}
 		
 	public function index() {
-		$data['title'] = "博客文章列表";
+		
+		$this->load->helper('form');
+		$this->load->library('form_validation');
 
 		//divide pages
 		$this->load->library('pagination');
@@ -23,8 +26,21 @@ class News extends CI_Controller {
 		$offset = $this->uri->segment(4);
 		$this->db->limit($perPage, $offset);
 
+		//search key word from title/summary/text
+		$search = $this->input->post('search');
+		if($search){
+			$this->db->like('title', $search);
+			$this->db->or_like('summary', $search);
+			$this->db->or_like('text', $search);
+			$data['title'] = "搜索关键字 ".$search." 的博客文章";
+		}
+		else{
+			$data['title'] = "博客文章列表";
+		}
+
 		$data['news'] = $this->news_model->get_news();
-	
+		$data['all_tags'] = $this->tag_model->get_all_tags();
+
 		$this->load->view('templates/header', $data);		
 		$this->load->view('news/index', $data);
 		$this->load->view('templates/footer');

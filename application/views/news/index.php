@@ -1,13 +1,26 @@
 <h2><?php echo $title; ?></h2>
 
 <!-- publish all news -->
-<?php 
-foreach($news as $news_item): ?>
-<?php	
-	$news_info = $news_item[0];
-	$tag_info = $news_item[1]; ?>
 
-	<div id='main'>
+
+<div id='main'>
+	<div class='sidebar'>
+			<div class='item'>
+				<h2>所有标签</h2>
+				<ul class='flink'>
+					<?php
+					foreach($all_tags as $tag){
+						echo "<li><a href=".site_url('tag/').$tag['tag']." >".$tag['tag']."</a></li>";
+					}  ?>
+				</ul>
+			</div>
+			
+		</div>
+	<?php foreach($news as $news_item): ?>
+		
+	<?php	
+		$news_info = $news_item[0];
+		$tag_info = $news_item[1]; ?>
 		<div class='details'>
 			<h2><?php echo $news_info['title']; ?></h2>
 			<a href="<?php echo site_url('news/view/').$news_info['title'] ?>">显示全文</a>
@@ -27,12 +40,18 @@ foreach($news as $news_item): ?>
 		</div>
 		</div>
 		
-		
+		<?php endforeach ?>
 	</div>
 	<br /><br /><br />
 
-<?php endforeach ?>
 <div class="page">
 	<?php echo $links ?>
 </div>
+
+<div id='main'>
+
+</div>
+
+
+
 

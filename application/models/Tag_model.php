@@ -58,4 +58,10 @@ class Tag_model extends CI_Model {
 			}
 		}
 	}
+
+	public function get_all_tags(){
+		$query = $this->db->distinct()->select('tag')->get('tags')->result_array();
+		return $query;
+	}
+
 }
