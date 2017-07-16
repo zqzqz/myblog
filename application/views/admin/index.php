@@ -52,6 +52,11 @@
 				        	<a href="<?php echo site_url('/admin/Upload/do_upload') ?>" class="pos">上传图片</a>				        	
 				        </li> 
 				    </ul>
+					<ul class="con">
+				        <li class="nav_u">
+				        	<a href="<?php echo site_url('/admin/AdminNews/comment') ?>" class="pos">查看评论</a>				        	
+				        </li> 
+				    </ul>
 
 				</div>
 			</div>		
@@ -65,33 +70,24 @@
 				    </ul>
 				  	<ul class="con">
 				        <li class="nav_u">
-				        	<a href="<?php echo site_url('admin/admin/copy') ?>" class="pos">系统信息</a>				        	
+				        	<a href="<?php echo site_url('admin/Admin/welcome') ?>" class="pos">系统信息</a>				        	
 				        </li> 
 				    </ul>
-				    <ul class="con">
-				        <li class="nav_u">
-				        	<a href="<?php echo site_url('admin/admin/change') ?>" class="pos">密码修改</a>				        	
-				        </li> 
-				    </ul>
+				    
 				</div>
 			</div>			
 		</div>
 		<!-- 右侧 -->
 		<div id="right">
-			<iframe  frameboder="0" border="0" 	scrolling="yes" name="iframe" src="<?php echo site_url() . '/admin/admin/copy' ?>"></iframe>
+			<iframe  frameboder="0" border="0" 	scrolling="yes" name="iframe" src="<?php echo site_url() . '/admin/Admin/welcome' ?>"></iframe>
 		</div>
 	<!-- 底部 -->
 	<div id="foot_box">
 		<div class="foot">
-			<p>@Copyright © 2013-2013 houdunwang.com All Rights Reserved. 京ICP备0000000号</p>
+			<p>@Copyright © 2017 zqzportal.cn All Rights Reserved. </p>
 		</div>
 	</div>
 
 </body>
 </html>
-<!--[if IE 6]>
-    <script type="text/javascript" src="<?php echo base_url() . 'style/admin/' ?>js/iepng.js"></script>
-    <script type="text/javascript">
-        DD_belatedPNG.fix('.adm_pic, #left_box .pos, .span_server, .span_people', 'background');
-    </script>
-<![endif]-->
+

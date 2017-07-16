@@ -25,8 +25,8 @@
 			<h2><?php echo $news_info['title']; ?></h2>
 			<a href="<?php echo site_url('news/view/').$news_info['title'] ?>">显示全文</a>
 		<div class='base'>
-			<em>发表于 <?php echo $news_info['time'] ?></em>
-			<strong>
+			<em>发表于 <?php echo $news_info['time'] ?></em></br>
+			<strong>标签：
 			<?php
 			foreach($tag_info as $tag){
 				echo "<a href=".site_url('tag/').$tag['tag']." >".$tag['tag']."</a>  ";

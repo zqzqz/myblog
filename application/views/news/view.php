@@ -24,6 +24,10 @@
 
 
 <!-- publish all comments -->
+<div id='main' >
+	<div class='details'>
+		<h2>评论区</h2>
+	</div>
 <?php 
 foreach($comments as $comment): ?>
 
@@ -43,38 +47,37 @@ foreach($comments as $comment): ?>
 	</div>
 	<br />
 <?php endforeach ?>
+</div>
 
 <!-- publish new comment -->
 <div class="row">
     <div class="col-md-8">
-        <section id="commentForm">
             <?php echo form_open('index/News/view/'.$news[0]['title']); ?>
             <form action="." method="post" class="form-horizontal">
-                <h4>发表评论</h4>
+                <h2>发表评论</h2>
                 <hr />
                 <div class="form-group">
-                    <label for="id_username" class="col-md-2 control-label">姓名/昵称</label>
+                    <label class="col-md-2 control-label">姓名/昵称</label>
                     <div class="col-md-10">
-                        <input type="input" name="name"  />
+                        <input type="input" class="form-control" name="name"  />
                         <?php echo form_error('name', '<span>', '</span>') ?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="id_password" class="col-md-2 control-label">我的评论</label>
+                    <label class="col-md-2 control-label">我的评论</label>
                     <div class="col-md-10">
-                        <textarea name="comment" style="width:500px;height:200px;" ></textarea>
+                        <textarea name="comment" class="form-control" style="width:500px;height:200px;" ></textarea>
                         <?php echo form_error('comment', '<span>', '</span>') ?>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="hidden" name="next" value="/" />
-                        <input type="submit" value="提交" class="btn btn-default" />
+                        <button type="submit" class="btn btn-default" >提交</button>
                     </div>
                 </div>
                 
             </form>
-        </section>
     </div>
 </div>
 <hr />

@@ -7,6 +7,7 @@ class AdminNews extends MY_Controller{
 		parent::__construct();
 		$this->load->model('news_model');
 		$this->load->model('tag_model');
+		$this->load->model('comment_model');
 	}
 
 	public function index(){
@@ -80,5 +81,28 @@ class AdminNews extends MY_Controller{
 			$this->tag_model->edit_tag($slug);
 			redirect('/admin/AdminNews/index');
 		}
+	}
+
+	//arrange comments
+	public function comment(){
+		$data['title'] = "查看评论";
+
+		//divide pages
+		$this->load->library('pagination');
+		$perPage = 8;
+		//config of dividing pages
+		$config['base_url'] = site_url('admin/AdminNews/comment');
+		$config['total_rows'] = $this->db->count_all_results('comment');
+		$config['per_page'] = $perPage;
+		$config['url_segment'] = 4;
+		
+		$this->pagination->initialize($config);
+		$data['links'] = $this->pagination->create_links();
+		$offset = $this->uri->segment(4);
+		$this->db->limit($perPage, $offset);
+
+		$data['comments'] = $this->comment_model->get_comment();
+	
+		$this->load->view('admin/comment', $data);
 	}
 }

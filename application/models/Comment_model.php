@@ -16,9 +16,13 @@ class Comment_model extends CI_Model {
 	}
 
 	//search comments for specific news
-	public function get_comment($slug) {
-
-		$query = $this->db->select('*')->from('comment')->where('slug',$slug)->get()->result_array();
+	public function get_comment($slug=null) {
+		
+		if($slug==null){
+			$query = $this->db->select('*')->from('comment')->order_by('time', 'DESC')->get()->result_array();
+			return $query;
+		}
+		$query = $this->db->select('*')->from('comment')->where('slug',$slug)->order_by('time', 'DESC')->get()->result_array();
 		return $query;
 	}
 
