@@ -23,7 +23,7 @@
 		$tag_info = $news_item[1]; ?>
 		<div class='details'>
 			<h2><?php echo $news_info['title']; ?></h2>
-			<a href="<?php echo site_url('news/view/').$news_info['title'] ?>">显示全文</a>
+			<a href="<?php echo site_url('news/view/').$news_info['slug'] ?>">显示全文</a>
 		<div class='base'>
 			<em>发表于 <?php echo $news_info['time'] ?></em></br>
 			<strong>标签：

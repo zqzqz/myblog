@@ -52,7 +52,7 @@ foreach($comments as $comment): ?>
 <!-- publish new comment -->
 <div class="row">
     <div class="col-md-8">
-            <?php echo form_open('index/News/view/'.$news[0]['title']); ?>
+            <?php echo form_open('index/News/view/'.$news[0]['slug']); ?>
             <form action="." method="post" class="form-horizontal">
                 <h2>发表评论</h2>
                 <hr />

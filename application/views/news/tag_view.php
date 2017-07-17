@@ -5,7 +5,7 @@
 	<div id='main'>
 		<div class='details'>
 			<h2><?php echo $news_item['title']; ?></h2>
-			<a href="<?php echo site_url('news/view/').$news_item['title'] ?>">显示全文</a>
+			<a href="<?php echo site_url('news/view/').$news_item['slug'] ?>">显示全文</a>
 		
 		<div class='base'>
 			<em>发表于 <?php echo $news_item['time'] ?></em>

@@ -32,7 +32,7 @@ class News_model extends CI_Model {
 			return $result;
 		}
 		
-		$sqlquery = $this->db->select('*')->from('news')->where('title', $slug)->get()->result_array();
+		$sqlquery = $this->db->select('*')->from('news')->where('slug', $slug)->get()->result_array();
 		$sql_tag = $this->db->select('tag')->from('tags')->where('slug', $slug)->get()->result_array();
 		$sqlquery[] = $sql_tag;
 		return $sqlquery;
