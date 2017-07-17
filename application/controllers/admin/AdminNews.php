@@ -55,6 +55,7 @@ class AdminNews extends MY_Controller{
 			
 	
 	public function delete($slug){
+		$this->comment_model->del_comment($slug);
 		$this->tag_model->del_tag($slug);
 		$this->news_model->del_news($slug);
 		redirect('/admin/AdminNews/index');
@@ -72,7 +73,7 @@ class AdminNews extends MY_Controller{
 		$data['title']="修改文章";
 		$data['news_item']=$this->news_model->get_news($slug);
 
-		if ($this->form_validation->run('news') === FALSE) {
+		if ($this->form_validation->run('edit_news') === FALSE) {
 			$this->load->view('admin/edit', $data);
 	
 		}

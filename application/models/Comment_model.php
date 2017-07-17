@@ -44,4 +44,10 @@ class Comment_model extends CI_Model {
 
 		return TRUE;
 	}
+
+	//delete relevant comments when news dropped
+	public function del_comment($slug){
+		$this->db->where('slug', $slug);
+		$this->db->delete('comment');
+	}
 }

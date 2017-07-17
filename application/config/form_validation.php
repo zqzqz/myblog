@@ -19,6 +19,19 @@ $config = array(
 				)
 
 		),
+	'edit_news'	=>	array(
+			array(
+				'field'	=>	'summary',
+				'label'	=> 'Sammary',
+				'rules'	=> 'required|max_length[155]'
+				),
+			array(
+				'field'	=>	'text',
+				'label'	=> 'Text',
+				'rules'	=> 'required|max_length[5000]'
+				)
+
+		),
 	'tags' =>	array(
 			array(
 				'field' =>	'tag',

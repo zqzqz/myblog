@@ -45,14 +45,14 @@ class Tag_model extends CI_Model {
 	//update tags when news changes
 	public function edit_tag($slug){
 		$tag_list = explode(' ', $this->input->post('tag') );
-		$new_slug = url_title($this->input->post('title'), 'dash', TRUE);
+		//$new_slug = url_title($this->input->post('title'), 'dash', TRUE);
 		//unsolved bug: useless bool operation
 		if($this->db->select('tag')->from('tags')->where('slug', $slug)->get()->result_array() <> $tag_list){
 			$this->del_tag($slug);
 			foreach($tag_list as $tag){
 				$data = array(
 					'tag' => $tag,
-					'slug' => $new_slug
+					'slug' => $slug
 				);
 				$this->db->insert('tags', $data);
 			}

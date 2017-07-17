@@ -2,7 +2,7 @@
 <?php	
 	$news_info = $news_item[0];
 	$tag_info = $news_item[1]; ?>
-<?php echo form_open('admin/AdminNews/edit/'.$news_info['title']); ?>
+<?php echo form_open('admin/AdminNews/edit/'.$news_info['slug']); ?>
 
 <form action="" method="POST" enctype="multipart/form-data">
 <table class="table">
@@ -12,8 +12,7 @@
   <tr>
     <td>标题</td>
     <td>
-      <input type="input" name="title" value="<?php echo $news_info['title'] ?>" />
-      <?php echo form_error('title', '<span>', '</span>') ?>
+      <h2><?php echo $news_info['title'] ?></h2>
     </td>
   </tr>
   <tr>

@@ -67,10 +67,7 @@ class News_model extends CI_Model {
 	//edit news object
 	public function edit_news($slug) {
 		
-		$new_slug = url_title($this->input->post('title'), 'dash', TRUE);
 		$data = array(
-			'title' => $this->input->post('title'),
-			'slug' => $new_slug,
 			'summary' => $this->input->post('summary'),
 			'text' => $this->input->post('text')
 		);
