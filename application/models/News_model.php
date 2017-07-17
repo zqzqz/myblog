@@ -22,7 +22,7 @@ class News_model extends CI_Model {
 	public function get_news($slug = False) {
                 //select news with tags
 		if ($slug === FALSE) {
-			$sqlquery = $this->db->select('*')->from('news')->order_by('time')->get()->result_array();
+			$sqlquery = $this->db->select('*')->from('news')->order_by('time', 'DESC')->get()->result_array();
 			$result=array();
 			foreach($sqlquery as $query){
 				$sql_tag = $this->db->select('tag')->from('tags')->where('slug',$query['slug'])->get()->result_array();
