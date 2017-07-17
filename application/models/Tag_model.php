@@ -17,7 +17,7 @@ class Tag_model extends CI_Model {
 	//search tags for specific news
 	public function get_tag($tag) {
 
-		$query = $this->db->select('*')->from('news')->join('tags', 'news.slug=tags.slug')->where('tag', $tag)->get()->result_array();
+		$query = $this->db->select('*')->from('news')->join('tags', 'news.slug=tags.slug')->where('tag', $tag)->order_by('time', 'DESC')->get()->result_array();
 		return $query;
 	}
 
